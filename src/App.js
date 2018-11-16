@@ -123,6 +123,8 @@ class App extends Component {
             className="contact-details"
             style={{ margin: "10px 50% 10px 50%" }}
             href="https://github.com/keiichiwatanuki"
+            id="profile-link"
+            target="_blank"
           >
             Github
           </a>

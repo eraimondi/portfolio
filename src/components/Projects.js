@@ -6,7 +6,7 @@ import React from "react";
 const Projects = ({ item }) => {
   return (
     <div className="column">
-      <a href={item.link} style={{ color: "inherit" }}>
+      <a href={item.link}>
         <div className="ui segment">
           {item.imageUrl ? (
             <img

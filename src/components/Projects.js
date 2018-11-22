@@ -18,7 +18,7 @@ const Projects = ({ item }) => {
             <iframe src={item.url} />
           </div>
         )}
-        <div className="ui segment">
+        <div className="ui segment" style={{ height: "150px" }}>
           <h4>
             <b>{item.title}</b>
           </h4>

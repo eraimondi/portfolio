@@ -104,10 +104,9 @@ class App extends Component {
             ))}
           </section>
         </div>
-        <div className="ui segment" style={{ marginBottom: "15px" }}>
+        <div className="ui segment">
           <a
             className="contact-details"
-            style={{ margin: "10px 50% 10px 50%" }}
             href="https://github.com/keiichiwatanuki"
             id="profile-link"
             target="blank"

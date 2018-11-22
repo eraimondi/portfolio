@@ -7,11 +7,17 @@ const Projects = ({ item }) => {
   return (
     <div className="column">
       <div className="ui segment">
-        <img
-          className="ui large image"
-          src={item.imageUrl}
-          alt={item.imageAlt}
-        />
+        {item.imageUrl ? (
+          <img
+            className="ui large image"
+            src={item.imageUrl}
+            alt={item.imageAlt}
+          />
+        ) : (
+          <div className="ui segment embed" style={{ height: "350px" }}>
+            <iframe src={item.url} />
+          </div>
+        )}
         <div className="ui segment">
           <h4>
             <b>{item.title}</b>

@@ -8,17 +8,18 @@ import Navigation from "./components/Navigation";
 const projects = [
   {
     imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
+    url: "https://keiichiwatanuki.github.io/portfolio/",
+    description: "A presentation of some of my past projects",
+    title: "This site",
+    link: "https://keiichiwatanuki.github.io/portfolio/"
   },
   {
     imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
+    url: "https://sickfits-keiichi-next-prod.herokuapp.com/",
+    description:
+      "An e-commerce app, from wesboss react-advanced course, I have implemented mercadopago into it",
+    title: "Sick-Fits",
+    link: "https://sickfits-keiichi-next-prod.herokuapp.com/"
   },
   {
     imageAlt: "Avatar",
@@ -70,10 +71,10 @@ class App extends Component {
             alt="me"
             onMouseOver={() => this.setState({ image: true })}
             onMouseLeave={() => this.setState({ image: false })}
-            className="ui centered image circular small"
+            className="ui centered image circular small "
           />
-          <h1>My porfolio</h1>
-          <p>I'm a paragraph</p>
+          <h1 className="ui header centered">My porfolio</h1>
+          <p style={{ textAlign: "center" }}>I'm a paragraph</p>
         </div>
 
         <section id="welcome-section" className="ui segment">
@@ -85,6 +86,7 @@ class App extends Component {
               <img
                 className="ui image centered medium"
                 src="http://iddp.com/wp-content/uploads/2016/08/hire_me.jpg"
+                alt="me"
               />
             ) : (
               "Welcome to My portfolio, please hover over me, if you dare"
@@ -92,10 +94,13 @@ class App extends Component {
           </h1>
         </section>
         <div className="ui segment">
-          <h1>Projects</h1>
-          <section id="projects" className="ui grid three column">
+          <h1 className="ui header centered">Projects</h1>
+          <section
+            id="projects"
+            className="ui grid three column stackable doubling"
+          >
             {projects.map((item, index) => (
-              <Projects item={item} />
+              <Projects key={index} item={item} />
             ))}
           </section>
         </div>
@@ -105,7 +110,7 @@ class App extends Component {
             style={{ margin: "10px 50% 10px 50%" }}
             href="https://github.com/keiichiwatanuki"
             id="profile-link"
-            target="_blank"
+            target="blank"
           >
             Github
           </a>

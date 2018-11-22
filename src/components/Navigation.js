@@ -11,18 +11,21 @@ class Navigation extends Component {
         <a
           className={`item ${this.state.activeItem === 0 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 0 })}
+          href="_blank"
         >
           Editorials
         </a>
         <a
           className={`item ${this.state.activeItem === 1 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 1 })}
+          href="_blank"
         >
           Reviews
         </a>
         <a
           className={`item ${this.state.activeItem === 2 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 2 })}
+          href="_blank"
         >
           Upcoming Events
         </a>

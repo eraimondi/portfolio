@@ -49,7 +49,8 @@ class App extends Component {
               C++, Java and some Haskell, all the way to javascript were I have
               stayed to perfect my skills on web Apps development with React.js
               and friends, itching to build new things, and learn new things,
-              while working in fantastic user experiences
+              while working in fantastic user experiences, I'm currently
+              studiying to get a cs degree from UP (University of Palermo)
             </p>
           </section>
           <section id="projects">
@@ -62,14 +63,37 @@ class App extends Component {
               </div>
             </div>
           </section>
-          <div className="ui segment aligned center">
-            <a href="https://github.com/keiichiwatanuki">
-              <button className="ui icon button circular massive">
-                <i class="github icon" />
-                Github
-              </button>
-            </a>
-          </div>
+          <footer className="ui padded segment">
+            <h1 style={{ textAlign: "center" }}>Find me via: </h1>
+            <div
+              id="buttons"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center"
+              }}
+            >
+              <a href="https://github.com/keiichiwatanuki">
+                <button className="ui icon button circular massive center align">
+                  <i className="github icon" />
+                  Github
+                </button>
+              </a>
+
+              <a href="mailto:edu.d.rai@gmail.com">
+                <button className="ui icon button google plus circular massive">
+                  <i className="google icon" />
+                  Gmail
+                </button>
+              </a>
+              <a href="https://www.linkedin.com/in/raimondieduardo/">
+                <button className="ui icon button linkedin circular massive">
+                  <i className="linkedin icon" />
+                  Linkedin
+                </button>
+              </a>
+            </div>
+          </footer>
         </div>
       </div>
     );

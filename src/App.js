@@ -1,55 +1,10 @@
 import React, { Component } from "react";
 import Projects from "./components/Projects";
 import Navigation from "./components/Navigation";
+import projects from "./projects";
 //projects will recieve as props an array of projects...were are the coming from?
 
 //TODO add a media query to correctly view on a phone?
-
-const projects = [
-  {
-    imageAlt: "Avatar",
-    url: "https://keiichiwatanuki.github.io/portfolio/",
-    description: "A presentation of some of my past projects",
-    title: "This site",
-    link: "https://keiichiwatanuki.github.io/portfolio/"
-  },
-  {
-    imageAlt: "Avatar",
-    url: "https://sickfits-keiichi-next-prod.herokuapp.com/",
-    description:
-      "An e-commerce app, from wesboss react-advanced course, I have implemented mercadopago into it",
-    title: "Sick-Fits",
-    link: "https://sickfits-keiichi-next-prod.herokuapp.com/"
-  },
-  {
-    imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
-  },
-  {
-    imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
-  },
-  {
-    imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
-  },
-  {
-    imageAlt: "Avatar",
-    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
-    description: "I'm a mockup project",
-    title: "Mockup",
-    link: "http://google.com"
-  }
-];
 
 class App extends Component {
   me =
@@ -63,56 +18,58 @@ class App extends Component {
 
   render() {
     return (
-      <div className="ui container">
+      <div>
         <Navigation />
-        <div className="ui segment" style={{ marginTop: "55px" }}>
-          <img
-            src={this.state.image ? this.me : this.anonymous}
-            alt="me"
-            onMouseOver={() => this.setState({ image: true })}
-            onMouseLeave={() => this.setState({ image: false })}
-            className="ui centered image circular small "
-          />
-          <h1 className="ui header centered">My porfolio</h1>
-          <p style={{ textAlign: "center" }}>I'm a paragraph</p>
-        </div>
 
-        <section id="welcome-section" className="ui segment">
-          <h1
-            onMouseOver={() => this.setState({ welcome: true })}
-            onMouseLeave={() => this.setState({ welcome: false })}
-          >
-            {this.state.welcome ? (
-              <img
-                className="ui image centered medium"
-                src="http://iddp.com/wp-content/uploads/2016/08/hire_me.jpg"
-                alt="me"
-              />
-            ) : (
-              "Welcome to My portfolio, please hover over me, if you dare"
-            )}
-          </h1>
-        </section>
-        <div className="ui segment">
-          <h1 className="ui header centered">Projects</h1>
-          <section
-            id="projects"
-            className="ui grid three column stackable doubling"
-          >
-            {projects.map((item, index) => (
-              <Projects key={index} item={item} />
-            ))}
+        <div className="ui container " id="home">
+          <div className="ui segment" style={{ marginTop: "55px" }}>
+            <img
+              src={this.state.image ? this.me : this.anonymous}
+              alt="me"
+              onMouseOver={() => this.setState({ image: true })}
+              onMouseLeave={() => this.setState({ image: false })}
+              className="ui centered image circular small "
+            />
+            <h1 className="ui header centered" style={{ fontSize: "40px" }}>
+              Eduardo Raimondi's Portfolio
+            </h1>
+            <p style={{ textAlign: "center", fontSize: "20px" }}>
+              <b>
+                React developer, currently walking the fullstack path with
+                React,Apollo and Express
+              </b>
+            </p>
+          </div>
+
+          <section id="welcome-section" className="ui segment">
+            <h1 style={{ fontSize: "40px", textAlign: "center" }}>About me</h1>
+            <p style={{ textAlign: "center", fontSize: "20px" }}>
+              My name is Eduardo Raimondi, I'm a 28yo developer from Cutral-Có ,
+              with 6 years of development experience going from lenguages like
+              C++, Java and some Haskell, all the way to javascript were I have
+              stayed to perfect my skills on web Apps development with React.js
+              and friends, itching to build new things, and learn new things,
+              while working in fantastic user experiences
+            </p>
           </section>
-        </div>
-        <div className="ui segment">
-          <a
-            className="contact-details"
-            href="https://github.com/keiichiwatanuki"
-            id="profile-link"
-            target="blank"
-          >
-            Github
-          </a>
+          <section id="projects">
+            <div className="ui segment">
+              <h1 className="ui header centered">Projects</h1>
+              <div className="ui grid three column stackable doubling">
+                {projects.map((item, index) => (
+                  <Projects key={index} item={item} />
+                ))}
+              </div>
+            </div>
+          </section>
+          <div className="ui segment aligned center">
+            <a href="https://github.com/keiichiwatanuki">
+              <button className="ui icon button circular massive">
+                <i class="github icon" />
+                Github
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     );

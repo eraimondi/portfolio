@@ -7,27 +7,27 @@ class Navigation extends Component {
 
   render() {
     return (
-      <div className="ui three item menu top fixed ">
+      <div className="ui three item menu fixed">
         <a
           className={`item ${this.state.activeItem === 0 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 0 })}
-          href="_blank"
+          href="#home"
         >
-          Editorials
+          Home
         </a>
         <a
           className={`item ${this.state.activeItem === 1 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 1 })}
-          href="_blank"
+          href="#welcome-section"
         >
-          Reviews
+          About me
         </a>
         <a
           className={`item ${this.state.activeItem === 2 ? "active" : ""}`}
           onClick={() => this.setState({ activeItem: 2 })}
-          href="_blank"
+          href="#projects"
         >
-          Upcoming Events
+          Projects
         </a>
       </div>
     );

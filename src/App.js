@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-import {
-  Grid,
-  Row,
-  Col,
-  Jumbotron,
-  Well,
-  Button,
-  Glyphicon
-} from "react-bootstrap";
 import Projects from "./components/Projects";
 import Navigation from "./components/Navigation";
 //projects will recieve as props an array of projects...were are the coming from?
 
+//TODO add a media query to correctly view on a phone?
+
 const projects = [
+  {
+    imageAlt: "Avatar",
+    imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
+    description: "I'm a mockup project",
+    title: "Mockup",
+    link: "http://google.com"
+  },
   {
     imageAlt: "Avatar",
     imageUrl: "https://i.imgur.com/oW1dGDI.jpg",
@@ -62,63 +62,44 @@ class App extends Component {
 
   render() {
     return (
-      <Grid style={{ background: "#FFF" }}>
-        <Row className="show-grid">
-          <Col>
-            <Navigation />
-            <Jumbotron
-              style={{
-                textAlign: "center"
-              }}
-            >
+      <div className="ui container">
+        <Navigation />
+        <div className="ui segment" style={{ marginTop: "55px" }}>
+          <img
+            src={this.state.image ? this.me : this.anonymous}
+            alt="me"
+            onMouseOver={() => this.setState({ image: true })}
+            onMouseLeave={() => this.setState({ image: false })}
+            className="ui centered image circular small"
+          />
+          <h1>My porfolio</h1>
+          <p>I'm a paragraph</p>
+        </div>
+
+        <section id="welcome-section" className="ui segment">
+          <h1
+            onMouseOver={() => this.setState({ welcome: true })}
+            onMouseLeave={() => this.setState({ welcome: false })}
+          >
+            {this.state.welcome ? (
               <img
-                src={this.state.image ? this.me : this.anonymous}
-                alt="me"
-                onMouseOver={() => this.setState({ image: true })}
-                onMouseLeave={() => this.setState({ image: false })}
-                style={{
-                  width: "100px",
-                  height: "auto",
-                  borderRadius: "50%"
-                }}
+                className="ui image centered medium"
+                src="http://iddp.com/wp-content/uploads/2016/08/hire_me.jpg"
               />
-              <h1>My porfolio</h1>
-              <p>I'm a paragraph</p>
-            </Jumbotron>
-          </Col>
-        </Row>
-        <Row className="show-grid2">
-          <Col>
-            <section id="welcome-section">
-              <h1
-                onMouseOver={() => this.setState({ welcome: true })}
-                onMouseLeave={() => this.setState({ welcome: false })}
-              >
-                {this.state.welcome ? (
-                  <img src="http://iddp.com/wp-content/uploads/2016/08/hire_me.jpg" />
-                ) : (
-                  "Welcome to My portfolio, please hover over me, if you dare"
-                )}
-              </h1>
-            </section>
-          </Col>
-        </Row>
-        <Row className="show-grid3">
-          <section id="projects">
-            <h1 style={{ textAlign: "center" }}>Projects</h1>
+            ) : (
+              "Welcome to My portfolio, please hover over me, if you dare"
+            )}
+          </h1>
+        </section>
+        <div className="ui segment">
+          <h1>Projects</h1>
+          <section id="projects" className="ui grid three column">
             {projects.map((item, index) => (
-              <Col
-                key={index}
-                style={{ padding: "10px 10px 10px 10px" }}
-                md={5}
-                mdPush={2}
-              >
-                <Projects item={item} />
-              </Col>
+              <Projects item={item} />
             ))}
           </section>
-        </Row>
-        <Row>
+        </div>
+        <div className="ui segment" style={{ marginBottom: "15px" }}>
           <a
             className="contact-details"
             style={{ margin: "10px 50% 10px 50%" }}
@@ -128,8 +109,8 @@ class App extends Component {
           >
             Github
           </a>
-        </Row>
-      </Grid>
+        </div>
+      </div>
     );
   }
 }

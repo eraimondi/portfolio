@@ -5,15 +5,21 @@ import React from "react";
 
 const Projects = ({ item }) => {
   return (
-    <div className="card project-title">
-      <img src={item.imageUrl} alt={item.imageAlt} />
-      <div className="container">
-        <h4>
-          <b>{item.title}</b>
-        </h4>
-        <a href={item.link}>
-          <p>{item.description}</p>
-        </a>
+    <div className="column">
+      <div className="ui segment">
+        <img
+          className="ui large image"
+          src={item.imageUrl}
+          alt={item.imageAlt}
+        />
+        <div className="ui segment">
+          <h4>
+            <b>{item.title}</b>
+          </h4>
+          <a href={item.link}>
+            <p>{item.description}</p>
+          </a>
+        </div>
       </div>
     </div>
   );
